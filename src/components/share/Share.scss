@@ -1,0 +1,48 @@
+.share {
+  height: 100%;
+
+  .shareContainer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    gap: 50px;
+    margin: auto;
+
+    .shareContainerList {
+      width: 350px;
+      height: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 5px;
+      border: 1px solid hsla(0, 1%, 50%, 0.2);
+      box-shadow: 0 0 20px 0 hsla(0, 1%, 50%, 0.2);
+
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      h1 {
+        font-size: 25px;
+        font-weight: 500;
+        padding: 0 10px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 0 10px;
+      }
+      .likeCount {
+        display: flex;
+        gap: 10px;
+        padding: 0 10px 20px;
+      }
+    }
+  }
+}
