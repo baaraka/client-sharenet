@@ -1,0 +1,56 @@
+.settings {
+  height: 100%;
+
+  .settingsContainer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 20px;
+
+    .containerUpdate {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 30px;
+        font-weight: 500;
+        color: lightskyblue;
+      }
+      h2 {
+        font-size: 25px;
+        font-weight: 500;
+        color: rgb(242, 84, 84);
+        cursor: pointer;
+      }
+    }
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 30%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      input {
+        border: none;
+        border-bottom: 1px solid lightgray;
+        padding: 10px;
+      }
+      button {
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 18px;
+        background-color: lightskyblue;
+        width: max-content;
+      }
+    }
+  }
+}
