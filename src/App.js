@@ -6,13 +6,16 @@ import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  const { user } = useContext(AuthContext);
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={user ? <Home /> : <Register />} />
           <Route path="/shares/:shareId" element={<Single />} />
           <Route path="/write" element={<Write />} />
           <Route path="/settings" element={<Settings />} />
