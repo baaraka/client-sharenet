@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function NavBar() {
+  const { user, dispatch } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
   return (
     <div className="navBar">
       <div className="navBarContainer">
@@ -19,18 +26,32 @@ function NavBar() {
           </Link>
         </div>
         <div className="right">
-          <Link to="/login" className="link">
-            <button>Login</button>
-          </Link>
-          <Link to="/register" className="link">
-            <button>Register</button>
-          </Link>
-
-          {/* <span>Happy</span>
-          <img
-            src="https://images.pexels.com/photos/17327920/pexels-photo-17327920/free-photo-of-woman-posing-with-arms-raised-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-            alt=""
-          /> */}
+          {user ? (
+            <>
+              <Link to="/settings" className="link">
+                <span style={{ cursor: "pointer" }}>{user.username}</span>
+              </Link>
+              <Link to="/settings" className="link">
+                <img
+                  src="https://images.pexels.com/photos/17402544/pexels-photo-17402544.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  alt=""
+                  style={{ cursor: "pointer" }}
+                />
+              </Link>
+              <span className="logoutUser" onClick={handleLogout}>
+                Logout
+              </span>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="link">
+                <button>Login</button>
+              </Link>
+              <Link to="/register" className="link">
+                <button>Register</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
