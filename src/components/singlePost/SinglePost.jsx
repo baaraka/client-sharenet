@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 function SinglePost() {
@@ -21,6 +21,7 @@ function SinglePost() {
   const pf = "http://localhost:5000/images/";
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const id = location.pathname.split("/")[2];
 
@@ -45,6 +46,15 @@ function SinglePost() {
     } catch (error) {}
   };
 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:5000/api/shares/${id}`, {
+        data: { username: user.username },
+      });
+      navigate("/");
+    } catch (error) {}
+  };
+
   return (
     <div className="singlePost">
       <div className="singlePostContainer">
@@ -58,8 +68,13 @@ function SinglePost() {
                   <FontAwesomeIcon
                     icon={faPenToSquare}
                     onClick={() => setUpdatedMode(true)}
+                    style={{ color: "lightskyblue", cursor: "pointer" }}
                   />
-                  <FontAwesomeIcon icon={faTrash} />
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    onClick={handleDelete}
+                    style={{ color: "red", cursor: "pointer" }}
+                  />
                 </div>
               )}
             </div>
