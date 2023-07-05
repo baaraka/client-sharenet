@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/singlePost" element={<Single />} />
+          <Route path="/shares/:shareId" element={<Single />} />
           <Route path="/write" element={<Write />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/register" element={<Register />} />
