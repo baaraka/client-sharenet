@@ -32,7 +32,20 @@
     }
     .right {
       display: flex;
+      align-items: center;
       gap: 20px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .logoutUser {
+        font-size: 18px;
+        cursor: pointer;
+      }
 
       button {
         font-size: 18px;
