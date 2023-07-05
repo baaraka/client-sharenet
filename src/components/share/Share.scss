@@ -37,6 +37,12 @@
         font-size: 16px;
         line-height: 1.5;
         padding: 0 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        cursor: pointer;
       }
       .likeCount {
         display: flex;
