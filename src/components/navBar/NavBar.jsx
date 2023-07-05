@@ -6,6 +6,8 @@ import { AuthContext } from "../../context/AuthContext";
 function NavBar() {
   const { user, dispatch } = useContext(AuthContext);
 
+  const pf = "http://localhost:5000/images/";
+
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
@@ -33,7 +35,7 @@ function NavBar() {
               </Link>
               <Link to="/settings" className="link">
                 <img
-                  src="https://images.pexels.com/photos/17402544/pexels-photo-17402544.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  src={pf + user.profilePic}
                   alt=""
                   style={{ cursor: "pointer" }}
                 />
