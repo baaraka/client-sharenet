@@ -22,7 +22,7 @@ function Share() {
       <div className="shareContainer">
         {item.map((item) => (
           <div className="shareContainerList" key={item._id}>
-            <img src={pf + item.image} alt="" />
+            {item.image && <img src={pf + item.image} alt="" />}
             <h1>{item.title}</h1>
             <Link to={`/shares/${item._id}`} key={item._id} className="link">
               <p>{item.desc}</p>
