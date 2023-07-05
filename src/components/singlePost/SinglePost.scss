@@ -52,6 +52,25 @@
         line-height: 1.5;
         padding: 0 10px;
       }
+      input {
+        border: none;
+        padding: 10px;
+        border-bottom: 1px solid lightgray;
+      }
+      textarea {
+        border: none;
+        padding: 10px;
+        border-bottom: 1px solid lightgray;
+      }
+      button {
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        background-color: lightskyblue;
+        font-size: 18px;
+        width: max-content;
+        align-self: flex-end;
+      }
       .likeCount {
         display: flex;
         gap: 10px;
