@@ -60,7 +60,7 @@ function SinglePost() {
       <div className="singlePostContainer">
         {item && (
           <div className="singlePostContainerList">
-            <img src={pf + item.image} alt="" />
+            {item.image && <img src={pf + item.image} alt="" />}
             <div className="singleItem">
               <span>author: {item.username}</span>
               {item.username === user?.username && (
